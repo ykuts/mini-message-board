@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <ul>
+    <% messages.forEach((message, index) => { %>
+      <li>
+        <strong><%= message.user %></strong> said: "<%= message.text %>" 
+        <em>on <%= message.added.toDateString() %></em>
+        <a href="/message/<%= index %>">Open</a>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/new">Add a New Message</a>
+</body>
+</html>
